@@ -16,26 +16,82 @@
           <a class="navbar-brand" href="home.html">
             <h1 class="logo">NutriLoop</h1>
           </a>
-          <button type="button" class="btn btn-primary btn-sm">Zaloguj się</button>
+          <button type="button" class="btn btn-primary btn-sm"><a href="sign-in.html">Zaloguj się</a></button>
         </div>
       </nav>
 
-      <container class="main-form">
-        <form action="utworz-konto.php" method="post">
-            <h2>Załóż konto</h2>
-            <div class="row g-3">
-                <div class="col">
-                    <label for="imie">Imię</label>
-                  <input type="text" name="imie" class="form-control" placeholder="Imię" aria-label="Imię">
+        <form action="" method="post" id="multiStepForm">
+            
+            <container class="main-form active" id="first-step">
+                <h2>Dane podstawowe</h2>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="login" class="label">Login</label>
+                        <input type="text" name="login" class="form-control" placeholder="Podaj swój login..." aria-label="nazwisko" min="1" max="20" required>
+                    </div>
                 </div>
-              </div>
-              <div class="row g-3">
-                <div class="col">
-                    <label for="nazwisko">Nazwisko</label>
-                  <input type="text" name="nazwisko" class="form-control" placeholder="Nazwisko" aria-label="nazwisko">
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="imie" class="label">Imię</label>
+                        <input type="text" name="imie" class="form-control" placeholder="Podaj imię..." aria-label="Imię" min="1" max="20" required>
+                    </div>
                 </div>
-              </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="email" class="label">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Podaj e-mail..." aria-label="Email" required>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="haslo" class="label">Hasło</label>
+                        <input type="password" name="haslo" class="form-control" placeholder="Podaj hasło..." aria-label="Hasło" required>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="powtorz-haslo" class="label">Powtórz hasło</label>
+                        <input type="password" name="powtorz-haslo" class="form-control" placeholder="Powtórz hasło..." aria-label="Hasło" required>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm next-step">Dalej</button>
+            </container>
+
+            <container class="main-form" id="second-step">
+                <h2>Dane szczegółowe</h2>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="wiek" class="label">Wiek</label>
+                        <input type="number" name="wiek" class="form-control" placeholder="Wiek" aria-label="Wiek" min="18" required>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="wzrost" class="label">Wzrost</label>
+                        <input type="number" name="wzrost" class="form-control" placeholder="170cm" aria-label="Wzrost" min="100" max="250" required>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="waga" class="label">Waga</label>
+                        <input type="number" name="waga" class="form-control" placeholder="60kg" aria-label="Waga" min="20" max="1000" required>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <p class="label">Płeć</p>
+                        <input type="radio" name="kobieta"  value="Kobieta" aria-label="Kobieta" checked>
+                        <label for="kobieta">Kobieta</label>
+                        <input type="radio" name="mezczyzna" value="Mężczyzna" aria-label="Mężczyzna">
+                        <label for="mezczyzna">Mężczyzna</label>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm prev-step">Wstecz</button>
+                <button type="submit" class="btn btn-primary btn-sm">Załóż konto</button>
+            </container>
         </form>
-      </container>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/form.js"></script>
 </body>
 </html>

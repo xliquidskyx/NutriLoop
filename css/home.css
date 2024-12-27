@@ -3,6 +3,12 @@
 body {
     min-height: 100vh;
 }
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
 h1, h2, h3 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -62,11 +68,6 @@ h3 {
     background-color:#1e4833;
     border-color: #1e4833;
     outline: none;
-}
-
-.sign-up {
-    color: white;
-    text-decoration: none;
 }
 
 .sub-section {
