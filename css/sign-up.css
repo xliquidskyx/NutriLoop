@@ -1,0 +1,54 @@
+body {
+    background-color: #C5E99B;
+    min-height: 100vh;
+}
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}   
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 23px;
+    text-align: left;
+}
+
+.navbar {
+    color: #394941;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 25px;
+}
+
+.btn-sm {
+    font-weight: 600;
+    padding: 7px;
+}
+
+.btn-primary {
+    background-color:#2f6349;
+    border-color: #2f6349;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color:#1e4833;
+    border-color: #1e4833;
+    outline: none;
+}
+
+.main-form {
+    background-color: rgb(250, 250, 250);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 50vw;
+    padding: 2em;
+    margin: auto;   
+}
