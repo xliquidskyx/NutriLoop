@@ -11,7 +11,8 @@ $(document).ready(function () {
     function validate(currentStep) {
         const currentFields = steps.eq(currentStep).find("input");
         let valid = true;
-                  
+        
+        //sprawdzamy poprawność pól 
         currentFields.each(function () {
             if (!this.checkValidity()) {
                 valid = false;
@@ -20,6 +21,15 @@ $(document).ready(function () {
                 $(this).removeClass("invalid");
             }
             });
+        
+        //sprawdzamy czy hasła się zgadzają
+        const haslo =  $('.password').val();
+        const powtorz_haslo = $('.repeated').val();
+
+        if (!(haslo === powtorz_haslo)) {
+            valid = false
+            $('input[type=password]').addClass("invalid");
+        }
         
         return valid;
                   
@@ -39,29 +49,6 @@ $(document).ready(function () {
         if (currentStep > 0) {
             currentStep--;
             showStep(currentStep);
-        }
-    });
-
-    $("#multiStepForm").on("submit", function(e) {
-        e.preventDefault();
-
-        valid = validate(currentStep);
-        if (valid) {
-            //pobieranie danych z formularza
-            const formData = $(this).serialize();
-
-            //wysylanie danych z formularza do bazy przez użycie AJAX
-            $.ajax({
-                url: "utworz_konto.php",
-                type: "POST",
-                data: formData,
-                success: function () {
-                    alert("Utworzono konto");
-                },
-                error: function () {
-                    alert("Nie utworzono konta");
-                },
-            })
         }
     });
 });

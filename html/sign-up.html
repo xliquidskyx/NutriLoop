@@ -20,14 +20,14 @@
         </div>
       </nav>
 
-        <form action="" method="post" id="multiStepForm">
+        <form action="../php/utworz_konto.php" method="post" id="multiStepForm">
             
             <container class="main-form active" id="first-step">
                 <h2>Dane podstawowe</h2>
                 <div class="row g-3">
                     <div class="col">
                         <label for="login" class="label">Login</label>
-                        <input type="text" name="login" class="form-control" placeholder="Podaj swój login..." aria-label="nazwisko" min="1" max="20" required>
+                        <input type="text" name="login" class="form-control" placeholder="Podaj swój login..." aria-label="Login" min="1" max="20" required>
                     </div>
                 </div>
                 <div class="row g-3">
@@ -45,13 +45,13 @@
                 <div class="row g-3">
                     <div class="col">
                         <label for="haslo" class="label">Hasło</label>
-                        <input type="password" name="haslo" class="form-control" placeholder="Podaj hasło..." aria-label="Hasło" required>
+                        <input type="password" name="haslo" class="form-control password" placeholder="Podaj hasło..." aria-label="Hasło" required>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col">
                         <label for="powtorz-haslo" class="label">Powtórz hasło</label>
-                        <input type="password" name="powtorz-haslo" class="form-control" placeholder="Powtórz hasło..." aria-label="Hasło" required>
+                        <input type="password" name="powtorz-haslo" class="form-control repeated" placeholder="Powtórz hasło..." aria-label="Hasło" required>
                     </div>
                 </div>
                 <button type="button" class="btn btn-primary btn-sm next-step">Dalej</button>
@@ -61,8 +61,8 @@
                 <h2>Dane szczegółowe</h2>
                 <div class="row g-3">
                     <div class="col">
-                        <label for="wiek" class="label">Wiek</label>
-                        <input type="number" name="wiek" class="form-control" placeholder="Wiek" aria-label="Wiek" min="18" required>
+                        <label for="data" class="label">Data urodzenia</label>
+                        <input type="date" name="data" class="form-control" placeholder="12.12.2024" aria-label="Data urodzenia" required>
                     </div>
                 </div>
                 <div class="row g-3">
@@ -80,14 +80,16 @@
                 <div class="row g-3">
                     <div class="col">
                         <p class="label">Płeć</p>
-                        <input type="radio" name="kobieta"  value="Kobieta" aria-label="Kobieta" checked>
+                        <input type="radio" name="plec"  value="kobieta" aria-label="Kobieta" checked>
                         <label for="kobieta">Kobieta</label>
-                        <input type="radio" name="mezczyzna" value="Mężczyzna" aria-label="Mężczyzna">
+                        <input type="radio" name="plec" value="mężczyzna" aria-label="Mężczyzna">
                         <label for="mezczyzna">Mężczyzna</label>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary btn-sm prev-step">Wstecz</button>
-                <button type="submit" class="btn btn-primary btn-sm">Załóż konto</button>
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-primary btn-sm prev-step">Wstecz</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Załóż konto</button>
+                </div>
             </container>
         </form>
 

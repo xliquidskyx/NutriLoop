@@ -48,6 +48,17 @@ h3 {
     outline: none;
 }
 
+.prev-step {
+    background-color: #aeaeae;
+    border-color: #909090;
+}
+
+.form-navigation {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
 .main-form {
     display: none;
 }
