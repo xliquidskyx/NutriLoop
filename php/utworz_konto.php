@@ -20,7 +20,7 @@
             }
 
             // Hashowanie hasła
-            $hashedPassword = password_hash($haslo, PASSWORD_BCRYPT);
+            $hashedPassword = password_hash($haslo, PASSWORD_DEFAULT);
 
             // Przygotowanie zapytania SQL
             $stmt = $conn->prepare("INSERT INTO uzytkownicy (login, imie, email, haslo, data_urodzenia, wzrost, waga, plec) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -38,5 +38,6 @@
             http_response_code(405);
             echo "Nieobsługiwana metoda żądania.";
             }
-
+        
+            $conn->close();
 ?>

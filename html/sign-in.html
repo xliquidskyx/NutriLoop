@@ -20,23 +20,56 @@
         </div>
       </nav>
     
-      <form action="" method="post">
+      <form id="login-form">
         <container class="main-form active">
             <h2>Zaloguj się</h2>
             <div class="row g-3">
                 <div class="col">
                     <label for="login" class="label">Login</label>
-                    <input type="text" name="login" class="form-control" placeholder="Podaj login..." aria-label="Login"required>
+                    <input type="text" name="login" id="login" class="form-control" placeholder="Podaj login..." aria-label="Login"required>
                 </div>
             </div>
             <div class="row g-3">
                 <div class="col">
                     <label for="haslo" class="label">Hasło</label>
-                    <input type="password" name="haslo" class="form-control" placeholder="Podaj hasło..." aria-label="Hasło" required>
+                    <input type="password" name="haslo" id="haslo" class="form-control" placeholder="Podaj hasło..." aria-label="Hasło" required>
                 </div>
             </div>
+            <p class="error-message"></p>
             <button type="submit" class="btn btn-primary btn-sm">Zaloguj się</button>
         </container>
       </form>
+      
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function(){
+          $('#login-form').on("submit", function(e) {
+            e.preventDefault();
+
+            const loginData = {
+              login: $('#login').val(),
+              haslo: $('#haslo').val()
+            };
+
+            $.ajax({
+              url: '..\\php\\logowanie.php',
+              type: 'POST',
+              data: loginData,
+              success: function (response) {
+                if (response === 'success'){
+                  window.location.href = 'http://localhost/NutriLoop/html/home.html';
+                } else {
+                  $('.error-message').text(response).show();
+                  $('.error-message').addClass('alert alert-danger');
+                }
+              },
+              error: function(response) {
+                $('.error-message').text('Wystąpił błąd').show();
+                $('.error-message').addClass('alert alert-danger');
+              }
+            });
+          });
+        });
+      </script>
 </body>
 </html>

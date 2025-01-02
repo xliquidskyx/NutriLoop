@@ -83,7 +83,3 @@ h3 {
 .col input {
     margin-bottom: 1em;
 }
-
-.invalid {
-    border: 1px solid rgb(175, 49, 49);
-}

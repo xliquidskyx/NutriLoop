@@ -16,9 +16,9 @@ $(document).ready(function () {
         currentFields.each(function () {
             if (!this.checkValidity()) {
                 valid = false;
-                $(this).addClass("invalid");
+                $(this).addClass("is-invalid");
             } else {
-                $(this).removeClass("invalid");
+                $(this).removeClass("is-invalid");
             }
             });
         
@@ -28,9 +28,9 @@ $(document).ready(function () {
 
         if (!(haslo === powtorz_haslo)) {
             valid = false
-            $('input[type=password]').addClass("invalid");
+            $('input[type=password]').addClass("is-invalid");
         }
-        
+
         return valid;
                   
     }
