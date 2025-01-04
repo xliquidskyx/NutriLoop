@@ -1,0 +1,81 @@
+<?php
+    session_start();
+    if(isset($_SESSION['login'])) {
+        header('Location: dashboard.php');
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaloguj się - NutriLoop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/sign-up.css">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="home.php">
+            <h1 class="logo">NutriLoop</h1>
+          </a>
+          <a href="sign-up.php"><button type="button" class="btn btn-primary btn-sm">Załóż konto</button></a>
+        </div>
+      </nav>
+    
+      <form id="login-form">
+        <container class="main-form active">
+            <h2>Zaloguj się</h2>
+            <div class="row g-3">
+                <div class="col">
+                    <label for="login" class="label">Login</label>
+                    <input type="text" name="login" id="login" class="form-control" placeholder="Podaj login..." aria-label="Login"required>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col">
+                    <label for="haslo" class="label">Hasło</label>
+                    <input type="password" name="haslo" id="haslo" class="form-control" placeholder="Podaj hasło..." aria-label="Hasło" required>
+                </div>
+            </div>
+            <p class="error-message"></p>
+            <button type="submit" class="btn btn-primary btn-sm">Zaloguj się</button>
+        </container>
+      </form>
+      
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function(){
+          $('#login-form').on("submit", function(e) {
+            e.preventDefault();
+
+            const loginData = {
+              login: $('#login').val(),
+              haslo: $('#haslo').val()
+            };
+
+            $.ajax({
+              url: '..\\php\\logowanie.php',
+              type: 'POST',
+              data: loginData,
+              success: function (response) {
+                if (response === 'success'){
+                  window.location.href = 'http://localhost/NutriLoop/html/dashboard.php';
+                } else {
+                  $('.error-message').text(response).show();
+                  $('.error-message').addClass('alert alert-danger');
+                }
+              },
+              error: function(response) {
+                $('.error-message').text('Wystąpił błąd').show();
+                $('.error-message').addClass('alert alert-danger');
+              }
+            });
+          });
+        });
+      </script>
+</body>
+</html>

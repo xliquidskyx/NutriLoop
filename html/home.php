@@ -1,0 +1,64 @@
+<?php
+    session_start();
+    if(isset($_SESSION['login'])) {
+        header('Location: dashboard.php');
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriLoop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="home.php">
+            <h1 class="logo">NutriLoop</h1>
+          </a>
+          <a href="sign-in.php"><button type="button" class="btn btn-primary btn-sm">Zaloguj się</button></a>
+        </div>
+      </nav>
+
+      <main class="container-fluid main-section">
+        <h1 class="welcome-msg">Witamy w NutriLoop!</h1>
+        <p class="main-paragraph">Twoje zdrowie i dobre samopoczucie są dla nas najważniejsze. NutriLoop to aplikacja, która pomoże Ci w prosty i intuicyjny sposób zarządzać codziennym odżywianiem.</p>
+        <div class="main-footer">
+          <h2 class="sub-header">Zacznij swoją podróż do lepszego samopoczucia z NutriLoop już dziś!</h2>
+          <a href="sign-up.php" class="sign-up"><button type="button" class="btn btn-primary btn-lg">Dołącz za darmo</button></a>
+        </div>
+      </main>
+      
+      <article class="sub-section">
+        
+        <h3 class="sub-header-h3">Co oferuje NutriLoop?</h3>
+
+        <ul class="list">
+          <li>
+            <img src="../img/check_circle_24dp_2F6349_FILL0_wght400_GRAD0_opsz24.png" alt="checkmark" class="checkmark">
+            <p class="bold-list">Śledzenie kalorii i składników odżywczych</p>
+            <p class="italic-list">Monitoruj swoje dzienne spożycie makroskładników (białka, tłuszcze, węglowodany) i mikroskładników (witaminy, minerały).</p></li>
+          <li><img src="../img/check_circle_24dp_2F6349_FILL0_wght400_GRAD0_opsz24.png" alt="checkmark" class="checkmark">
+            <p class="bold-list">Tworzenie planów posiłków</p>
+            <p class="italic-list"></p>Dostosuj posiłki do swoich celów dietetycznych i preferencji.</li>
+          <li><img src="../img/check_circle_24dp_2F6349_FILL0_wght400_GRAD0_opsz24.png" alt="checkmark" class="checkmark">
+            <p class="bold-list">Inteligentny dziennik posiłków</p>
+            <p class="italic-list">Wyszukuj produkty spożywcze, dodawaj własne przepisy lub skanuj kody kreskowe, aby szybko dodawać jedzenie.</p></li>
+          <li><img src="../img/check_circle_24dp_2F6349_FILL0_wght400_GRAD0_opsz24.png" alt="checkmark" class="checkmark">
+            <p class="bold-list">Generowanie list zakupów</p>
+            <p class="italic-list">Na podstawie Twojego planu posiłków tworzymy listę potrzebnych składników.</p></li>
+        </ul>
+
+        <h3 class="sub-header-h3">Dla kogo?</h3>
+        <p>Dla każdego! Niezależnie od tego, czy chcesz schudnąć, przybrać na masie mięśniowej, czy po prostu zadbać o zdrowszą dietę, NutriLoop ułatwi Ci osiągnięcie Twoich celów.</p>
+        
+      </article>
+      <footer class="footer">© 2024 NutriLoop. Wszystkie prawa zastrzeżone.</footer>
+</body>
+</html>
