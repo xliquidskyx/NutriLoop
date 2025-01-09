@@ -34,19 +34,44 @@
         <p id="date"></p>
       <div class="row">
         <div class="col">
-          <p>Śniadanie</p>
-          <button class="btn btn-primary btn-sm">Dodaj produkt</button>
+          <h2>Śniadanie</h2>
+          <ul id="meal-plan-1" class="list-group list-group-flush meal-plan">
+          </ul>
+          <button class="btn btn-primary btn-sm add-product-btn">Dodaj produkt</button>
         </div>
         <div class="col">
-          <p>Obiad</p>
-          <button class="btn btn-primary btn-sm">Dodaj produkt</button>
+          <h2>Obiad</h2>
+          <ul id="meal-plan-2" class="list-group list-group-flush meal-plan">
+          </ul>
+          <button class="btn btn-primary btn-sm add-product-btn">Dodaj produkt</button>
         </div>
         <div class="col">
-          <p>Kolacja</p>
-          <button class="btn btn-primary btn-sm">Dodaj produkt</button>
+          <h2>Kolacja</h2>
+          <ul id="meal-plan-3" class="list-group list-group-flush meal-plan">
+          </ul>
+          <button class="btn btn-primary btn-sm add-product-btn">Dodaj produkt</button>
         </div>
       </div>
     </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productModalLabel">Dodaj Produkt</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="search-input" class="form-control" placeholder="Wpisz nazwę produktu...">
+            <button class="btn btn-success mt-3" id="search-btn">Szukaj</button>
+            <ul id="search-results" class="list-group">
+              <!-- Wyniki wyszukiwania -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/api-connect.js"></script>
     <script>
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
@@ -54,7 +79,6 @@
         let yyyy = String(today.getFullYear());
 
         today = dd + '.' + mm + '.' + yyyy;
-        console.log(today);
         document.getElementById('date').innerHTML = 'Plan na ' + today;
     </script>
 </body>

@@ -28,8 +28,9 @@
 
             // Wykonanie zapytania
             if ($stmt->execute()) {
-                echo "Rejestracja zakończona pomyślnie.";
-                header('http://localhost/NutriLoop/html/home.html');
+                session_start();
+                $_SESSION['login'] = $login;
+                header('Location: ../html/dashboard.php');
             } else {
                 http_response_code(500);
                 echo "Wystąpił błąd podczas rejestracji.";

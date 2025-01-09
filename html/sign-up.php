@@ -33,31 +33,31 @@
                 <div class="row g-3">
                     <div class="col">
                         <label for="login" class="label">Login</label>
-                        <input type="text" name="login" class="form-control" placeholder="Podaj swój login..." aria-label="Login" min="1" max="20" required>
+                        <input id="login" type="text" name="login" class="form-control" placeholder="Podaj swój login..." aria-label="Login" min="1" max="20" required>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col">
                         <label for="imie" class="label">Imię</label>
-                        <input type="text" name="imie" class="form-control" placeholder="Podaj imię..." aria-label="Imię" min="1" max="20" required>
+                        <input id="imie" type="text" name="imie" class="form-control" placeholder="Podaj imię..." aria-label="Imię" min="1" max="20" required>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col">
                         <label for="email" class="label">Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Podaj e-mail..." aria-label="Email" required>
+                        <input id="email" type="email" name="email" class="form-control" placeholder="Podaj e-mail..." aria-label="Email" required>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col">
                         <label for="haslo" class="label">Hasło</label>
-                        <input type="password" name="haslo" class="form-control password" placeholder="Podaj hasło..." aria-label="Hasło" required>
+                        <input id="haslo" type="password" name="haslo" class="form-control password" placeholder="Podaj hasło..." aria-label="Hasło" required>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col">
                         <label for="powtorz-haslo" class="label">Powtórz hasło</label>
-                        <input type="password" name="powtorz-haslo" class="form-control repeated" placeholder="Powtórz hasło..." aria-label="Hasło" required>
+                        <input id="powtorz-haslo" type="password" name="powtorz-haslo" class="form-control repeated" placeholder="Powtórz hasło..." aria-label="Hasło" required>
                     </div>
                 </div>
                 <button type="button" class="btn btn-primary btn-sm next-step">Dalej</button>
@@ -68,27 +68,27 @@
                 <div class="row g-3">
                     <div class="col">
                         <label for="data" class="label">Data urodzenia</label>
-                        <input type="date" name="data" class="form-control" placeholder="12.12.2024" aria-label="Data urodzenia" required>
+                        <input id="data" type="date" name="data" class="form-control" placeholder="12.12.2024" aria-label="Data urodzenia" required>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col">
                         <label for="wzrost" class="label">Wzrost</label>
-                        <input type="number" name="wzrost" class="form-control" placeholder="170cm" aria-label="Wzrost" min="100" max="250" required>
+                        <input id="wzrost" type="number" name="wzrost" class="form-control" placeholder="170cm" aria-label="Wzrost" min="100" max="250" required>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col">
                         <label for="waga" class="label">Waga</label>
-                        <input type="number" name="waga" class="form-control" placeholder="60kg" aria-label="Waga" min="20" max="1000" required>
+                        <input id="waga" type="number" name="waga" class="form-control" placeholder="60kg" aria-label="Waga" min="20" max="1000" required>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col">
                         <p class="label">Płeć</p>
-                        <input type="radio" name="plec"  value="kobieta" aria-label="Kobieta" checked>
+                        <input id="kobieta" type="radio" name="plec"  value="kobieta" aria-label="Kobieta" checked>
                         <label for="kobieta">Kobieta</label>
-                        <input type="radio" name="plec" value="mężczyzna" aria-label="Mężczyzna">
+                        <input id="mezczyzna" type="radio" name="plec" value="mężczyzna" aria-label="Mężczyzna">
                         <label for="mezczyzna">Mężczyzna</label>
                     </div>
                 </div>
