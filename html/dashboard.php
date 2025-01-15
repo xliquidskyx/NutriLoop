@@ -37,18 +37,21 @@
           <h2>Śniadanie</h2>
           <ul id="meal-plan-1" class="list-group list-group-flush meal-plan">
           </ul>
+          <span id="sniadanie-total">Suma: 0 kcal</span>
           <button class="btn btn-primary btn-sm add-product-btn">Dodaj produkt</button>
         </div>
         <div class="col">
           <h2>Obiad</h2>
           <ul id="meal-plan-2" class="list-group list-group-flush meal-plan">
           </ul>
+          <span id="obiad-total">Suma: 0 kcal</span>
           <button class="btn btn-primary btn-sm add-product-btn">Dodaj produkt</button>
         </div>
         <div class="col">
           <h2>Kolacja</h2>
           <ul id="meal-plan-3" class="list-group list-group-flush meal-plan">
           </ul>
+          <span id="kolacja-total">Suma: 0 kcal</span>
           <button class="btn btn-primary btn-sm add-product-btn">Dodaj produkt</button>
         </div>
       </div>
